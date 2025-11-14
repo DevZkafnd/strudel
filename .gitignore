@@ -1,11 +1,3 @@
-# Dependencies
-node_modules/
-package-lock.json
-
-# Build outputs
-dist/
-.vite/
-
 # IDE
 .vscode/
 .idea/
@@ -19,13 +11,11 @@ Thumbs.db
 
 # Logs
 *.log
-npm-debug.log*
-
-# Environment variables
-.env
-.env.local
 
 # SuperCollider recordings (optional - uncomment if you don't want to track recordings)
 # *.wav
 # *.aiff
 
+# SuperCollider compiled files
+*.scsyndef
+*.scx

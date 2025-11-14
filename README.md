@@ -1,120 +1,116 @@
-# 🎵 Strudel Music Project - Membuat Beat Melalui Coding
+# 🎛️ SuperCollider Beat Maker - Membuat Beat Melalui Coding
 
-Project ini adalah implementasi lengkap untuk membuat musik dan beat melalui coding menggunakan **Strudel** (JavaScript) dan **SuperCollider**. Cocok untuk pemula yang ingin belajar live coding musik!
+Project ini adalah kumpulan file SuperCollider untuk membuat beat dan musik melalui coding. Cocok untuk pemula yang ingin belajar live coding musik dengan SuperCollider!
 
 ## 🚀 Fitur
 
-### 🌐 Web Interface (Strudel)
-- **9+ Contoh Musik Siap Pakai**: Dari melodi sederhana hingga DJ loops kompleks
-- **Live Coding Area**: Ketik kode Strudel Anda sendiri dan dengarkan hasilnya secara real-time
-- **Drum Patterns**: Berbagai pattern drum (basic, funk, hip-hop, breakbeat)
-- **Chord Progressions**: Pop, jazz, blues, dan minor progressions
-- **DJ Loops**: House (124 BPM), Techno (128 BPM), Chill (90 BPM)
-- **Guitar Themes**: Pirates-style theme dengan arpeggio
-- **Efek Audio**: Reverb, delay, gain, pan, dan speed control
-- **UI Modern**: Interface yang user-friendly dengan gradient design
+### 🎵 File Beat yang Tersedia
 
-### 🎛️ SuperCollider Files (.scd)
-- **cinematic.scd**: Komposisi cinematic dengan pad, choir, bass, arpeggio, dan atmosfer
-- **dj_loop.scd**: DJ club remix dengan struktur arrangement lengkap (intro, build-up, drop, breakdown)
-- **saas.scd**: Musik dreamy/ambient dengan bass dan gitar pad yang lembut
+- **⭐ beat_basic.scd**: Template dasar untuk membuat beat (cocok untuk pemula)
+  - Pattern sederhana: Kick, Snare, Hi-hat
+  - Kontrol mudah dengan `~start.()` dan `~stop.()`
+  - BPM: 120 (dapat diubah)
+
+- **🎤 beat_hiphop.scd**: Beat hip-hop klasik dengan groove yang khas
+  - Pattern syncopated
+  - BPM: 90 (khas hip-hop)
+  - Kick dan snare dengan karakteristik hip-hop
+
+- **🔥 beat_trap.scd**: Beat trap modern dengan 808 kick dan hi-hat rolls
+  - 808-style kick (sub bass)
+  - Hi-hat rolls yang kompleks
+  - BPM: 140 (khas trap)
+  - Snare pada beat 3
+
+- **🎚️ dj_loop.scd**: DJ club remix dengan struktur arrangement lengkap
+  - Intro, build-up, drop, breakdown, outro
+  - Sidechain compression
+  - Master effects (reverb, limiter)
+  - BPM: 125
+
+- **🎬 cinematic.scd**: Komposisi cinematic dengan pad, choir, bass, arpeggio
+  - Auto-record ke file WAV
+  - Durasi: 90 detik
+  - Multiple layers (pad, choir, bass, arpeggio, percussion)
+
+- **🌙 saas.scd**: Musik dreamy/ambient dengan bass dan gitar pad
+  - Musik ambient lembut
+  - Bass dan gitar pad
+  - Cocok untuk background music
+
+- **📖 SUPERCOLLIDER_GUIDE.md**: Panduan lengkap cara menggunakan SuperCollider untuk membuat beat
 
 ## 📦 Instalasi
 
-### Untuk Web Interface (Strudel)
+### 1. Install SuperCollider
 
-#### 1. Install Dependencies
+#### Windows
+- Download dari [supercollider.github.io](https://supercollider.github.io/download)
+- Install SuperCollider IDE
+
+#### Mac
 ```bash
-npm install
+brew install supercollider
 ```
 
-#### 2. Jalankan Development Server
+#### Linux
 ```bash
-npm run dev
+sudo apt-get install supercollider
 ```
 
-#### 3. Buka Browser
-Buka `http://localhost:5173` di browser Anda
+### 2. Buka File .scd
 
-### Untuk SuperCollider Files
+1. Buka SuperCollider IDE
+2. Buka file `.scd` yang ingin Anda jalankan:
+   - **`beat_basic.scd`** - ⭐ **Mulai dari sini!** Template dasar untuk belajar
+   - **`beat_hiphop.scd`** - Beat hip-hop klasik
+   - **`beat_trap.scd`** - Beat trap modern
+   - `dj_loop.scd` - DJ loop dengan arrangement lengkap
+   - `cinematic.scd` - Komposisi cinematic
+   - `saas.scd` - Musik dreamy/ambient
 
-#### 1. Install SuperCollider
-- Download dari [supercollider.github.io](https://supercollider.github.io/)
-- Install sesuai sistem operasi Anda
+### 3. Jalankan Kode
 
-#### 2. Buka File .scd
-- Buka SuperCollider IDE
-- Buka file `.scd` yang ingin Anda jalankan:
-  - `cinematic.scd` - untuk musik cinematic
-  - `dj_loop.scd` - untuk DJ loop dengan arrangement
-  - `saas.scd` - untuk musik dreamy/ambient
+1. Pilih seluruh isi file (Ctrl+A / Cmd+A)
+2. Tekan Ctrl+Enter (Windows/Linux) atau Cmd+Enter (Mac)
+3. Beat akan mulai bermain otomatis
 
-#### 3. Jalankan Kode
-- Pilih seluruh isi file (Ctrl+A / Cmd+A)
-- Tekan Ctrl+Enter (Windows/Linux) atau Cmd+Enter (Mac)
-- Musik akan mulai bermain otomatis
+**📖 Baca panduan lengkap:** [SUPERCOLLIDER_GUIDE.md](SUPERCOLLIDER_GUIDE.md)
 
-## 🎼 Contoh Penggunaan
+## 🎼 Cara Menggunakan
 
-### 🌐 Strudel (Web Browser)
+### ⭐ beat_basic.scd (Pemula)
 
-#### Melodi Sederhana
-```javascript
-note("c d e f g", "1 0.5 0.5 1 2")
-```
-
-#### Drum Pattern
-```javascript
-stack(
-  s("bd*4"),        // Bass drum 4x
-  s("~ sn ~ sn"),   // Snare pada beat 2 dan 4
-  s("hh*8")         // Hi-hat 8x
-)
-```
-
-#### Chord Progression
-```javascript
-chord("c f g c", "2")
-```
-
-#### Melodi dengan Efek
-```javascript
-note("c4 d4 e4 f4 g4 a4 b4 c5", "0.5")
-  .gain(0.3)        // Volume 30%
-  .reverb(0.8)      // Reverb 80%
-  .delay(0.5, 0.3)  // Delay 0.5s, feedback 30%
-```
-
-#### Pattern Kompleks
-```javascript
-stack(
-  note("c4 e4 g4", "2").gain(0.4),  // Melodi
-  note("c2", "1").gain(0.6),        // Bass
-  s("bd*2 ~ sn ~ bd*2")             // Drum
-)
-```
-
-#### DJ Loop (House 124 BPM)
-```javascript
-setBPM(124);
-stack(
-  s("bd*4").gain(0.9),
-  s("~ cp ~ cp").gain(0.55),
-  s("hh*12").gain(0.16),
-  note("c2 ~ c2 ~", "0.5").gain(0.38),
-  note("~ e4g4b4 ~ e4g4b4", "0.5").gain(0.22).reverb(0.35)
-)
-```
-
-### 🎛️ SuperCollider
-
-#### Menggunakan cinematic.scd
-1. Buka file `cinematic.scd` di SuperCollider IDE
+1. Buka file `beat_basic.scd` di SuperCollider IDE
 2. Pilih semua (Ctrl+A) dan jalankan (Ctrl+Enter)
-3. Musik akan mulai otomatis dan berhenti setelah 90 detik
-4. File akan direkam ke `D:/soundtrack/cinematic2.wav`
+3. Beat akan mulai otomatis dengan pattern dasar:
+   - Kick pada beat 1
+   - Snare pada beat 2 dan 4
+   - Hi-hat setiap 1/4 beat
 
-#### Menggunakan dj_loop.scd
+**Kontrol:**
+```supercollider
+~start.();  // Mulai beat
+~stop.();   // Hentikan beat
+~bpm = 128; // Ubah tempo (lalu restart)
+```
+
+### 🎤 beat_hiphop.scd
+
+1. Buka file `beat_hiphop.scd` di SuperCollider IDE
+2. Pilih semua dan jalankan
+3. Beat hip-hop dengan pattern syncopated akan mulai
+4. BPM: 90 (khas hip-hop)
+
+### 🔥 beat_trap.scd
+
+1. Buka file `beat_trap.scd` di SuperCollider IDE
+2. Pilih semua dan jalankan
+3. Beat trap dengan 808 kick dan hi-hat rolls
+4. BPM: 140 (khas trap)
+
+### 🎚️ dj_loop.scd
+
 1. Buka file `dj_loop.scd` di SuperCollider IDE
 2. Pilih semua dan jalankan
 3. Pattern akan mulai otomatis dengan struktur:
@@ -132,7 +128,16 @@ stack(
 ~bpm = 126; // Ubah tempo (lalu restart clock)
 ```
 
-#### Menggunakan saas.scd
+### 🎬 cinematic.scd
+
+1. Buka file `cinematic.scd` di SuperCollider IDE
+2. Pilih semua dan jalankan
+3. Musik akan mulai otomatis dan berhenti setelah 90 detik
+4. File akan direkam ke `D:/soundtrack/cinematic2.wav`
+   - **Catatan**: Ubah path recording sesuai kebutuhan Anda
+
+### 🌙 saas.scd
+
 1. Buka file `saas.scd` di SuperCollider IDE
 2. Pilih semua dan jalankan
 3. Musik dreamy/ambient akan mulai dengan bass dan gitar pad
@@ -141,198 +146,153 @@ stack(
 
 ```
 strudel/
-├── index.html          # Web interface utama
-├── examples.js         # Kumpulan pattern Strudel (melodi, drum, chord, DJ loops)
-├── package.json        # Dependencies dan scripts
-├── vite.config.js      # Konfigurasi Vite
+├── README.md                # Dokumentasi utama
+├── SUPERCOLLIDER_GUIDE.md   # 📖 Panduan lengkap SuperCollider untuk beat
 │
-├── cinematic.scd       # SuperCollider: Komposisi cinematic (90 detik, auto-record)
-├── dj_loop.scd         # SuperCollider: DJ club remix dengan arrangement lengkap
-└── saas.scd            # SuperCollider: Musik dreamy/ambient
+├── beat_basic.scd          # ⭐ Template dasar beat (pemula)
+├── beat_hiphop.scd         # Beat hip-hop klasik
+├── beat_trap.scd           # Beat trap modern
+├── dj_loop.scd            # DJ club remix dengan arrangement lengkap
+├── cinematic.scd          # Komposisi cinematic (90 detik, auto-record)
+└── saas.scd               # Musik dreamy/ambient
 ```
 
-## 🎯 Perbedaan Strudel vs SuperCollider
+## 🎯 Konsep Dasar SuperCollider
 
-### Strudel (Web)
-- ✅ **Mudah digunakan**: Tidak perlu install, langsung di browser
-- ✅ **Live coding**: Edit kode dan langsung dengar hasilnya
-- ✅ **Portable**: Bisa dijalankan di mana saja
-- ⚠️ **Terbatas**: Menggunakan Web Audio API (latensi lebih tinggi)
-
-### SuperCollider
-- ✅ **Profesional**: Audio engine native, latensi sangat rendah
-- ✅ **Powerful**: Lebih banyak kontrol dan efek
-- ✅ **Recording**: Bisa langsung record ke file audio
-- ⚠️ **Perlu install**: Harus install SuperCollider terlebih dahulu
-
-## 🎹 Notasi Musik
-
-### Not Dasar
-- `c`, `d`, `e`, `f`, `g`, `a`, `b` = Not natural
-- `c#`, `d#`, `f#`, `g#`, `a#` = Not sharp
-- `cb`, `db`, `eb`, `gb`, `ab`, `bb` = Not flat
-
-### Oktav
-- `c4` = Middle C (oktav 4)
-- `c5` = C satu oktaf di atas middle C
-- `c3` = C satu oktav di bawah middle C
-
-### Durasi
-- `1` = Whole note (4 beats)
-- `2` = Half note (2 beats)
-- `0.5` = Quarter note (1 beat)
-- `0.25` = Eighth note (0.5 beat)
-
-## 🥁 Drum Samples
-
-### Basic Drums
-- `bd` = Bass drum
-- `sn` = Snare drum
-- `hh` = Hi-hat
-- `cp` = Clap
-- `cy` = Cymbal
-
-### Pattern Examples
-- `bd*4` = Bass drum 4 kali berturut-turut
-- `~ sn ~ sn` = Snare pada beat 2 dan 4 (rest pada 1 dan 3)
-- `hh*8` = Hi-hat 8 kali
-
-## 🔧 Fungsi Helper (Strudel)
-
-File `examples.js` menyediakan berbagai pattern dan fungsi helper:
-
-```javascript
-// Pattern yang tersedia di window object
-window.basicMelodies.cMajorScale
-window.drumPatterns.basicBeat
-window.chordProgressions.popProgression
-window.djLoops.house124
-window.chillLoops.chill90
-window.guitarThemes.piratesMinor
-
-// Fungsi random generator
-createRandomMelody(8)           // Generate melodi random
-createRandomDrumPattern(8)      // Generate drum pattern random
-createRandomChordProgression(4) // Generate chord progression random
+### 1. SynthDef - Definisi Suara
+SynthDef adalah template untuk membuat suara:
+```supercollider
+SynthDef(\kick, { |out=0, amp=0.8, freq=50|
+    var env, sig;
+    env = EnvGen.ar(Env.perc(0.001, 0.3), doneAction:2);
+    sig = SinOsc.ar(freq) * env * amp;
+    Out.ar(out, sig ! 2);
+}).add;
 ```
 
-### Contoh Penggunaan di Live Coding Area
-
-```javascript
-// Copy-paste ini ke Live Coding Area di browser:
-
-// 1. Basic melody
-note("c d e f g a b c5", "0.5")
-
-// 2. Funk beat
-stack(
-  s("bd ~ ~ bd ~ ~ bd ~"),
-  s("~ ~ sn ~ ~ ~ sn ~"),
-  s("hh*8")
-)
-
-// 3. Pop chord progression
-chord("c g am f", "2")
-
-// 4. Full arrangement
-stack(
-  note("c4 e4 g4", "2").gain(0.4).reverb(0.3),
-  note("c2", "1").gain(0.6),
-  s("bd*2 ~ sn ~ bd*2"),
-  note("c4 d4 e4 f4 g4 a4 b4 c5", "0.5").gain(0.3).delay(0.3, 0.2)
-)
+### 2. Pbind - Pattern Binding
+Pbind membuat pattern ritmik:
+```supercollider
+Pbind(
+    \instrument, \kick,
+    \dur, 1,  // Durasi 1 beat
+    \amp, 0.8
+).play;
 ```
 
-## 🎵 Live Coding Tips
+### 3. TempoClock - Kontrol Tempo
+```supercollider
+~bpm = 120;
+~clock = TempoClock(~bpm/60);
+```
 
-### Di Browser (Strudel)
-1. **Eksperimen**: Coba berbagai kombinasi not dan rhythm di Live Coding Area
-2. **Belajar**: Pahami bagaimana setiap fungsi bekerja dengan mencoba contoh-contoh
-3. **Buat Musik**: Buat komposisi musik Anda sendiri dengan menggabungkan pattern
-4. **Iterasi**: Modifikasi pattern secara real-time dan dengar hasilnya langsung
-5. **Stop**: Gunakan `hush()` untuk menghentikan semua suara
+### 4. Pdef - Pattern Definition
+Menyimpan pattern untuk kontrol:
+```supercollider
+Pdef(\kick, Pbind(...));
+Pdef(\kick).play;  // Mulai
+Pdef(\kick).stop;  // Hentikan
+```
 
-### Di SuperCollider
-1. **Edit Pattern**: Ubah nilai di file `.scd` dan jalankan ulang
-2. **Kontrol Real-time**: Gunakan `~start.()` dan `~stop.()` untuk kontrol
-3. **Ubah Tempo**: Edit `~bpm` dan restart clock
-4. **Monitor**: Gunakan `s.freqscope` dan `s.scope` untuk melihat spektrum audio
+## 💡 Tips & Tricks
+
+### 1. Ubah Tempo
+```supercollider
+~bpm = 140;  // Ubah nilai BPM
+~clock = TempoClock(~bpm/60);  // Restart clock
+```
+
+### 2. Layering Pattern
+```supercollider
+// Jalankan beberapa pattern bersamaan
+Pdef(\kick).play(~clock, quant:1);
+Pdef(\snare).play(~clock, quant:1);
+Pdef(\hats).play(~clock, quant:1);
+```
+
+### 3. Recording
+```supercollider
+// Mulai recording
+s.record(numChannels: 2, path: "D:/beat_output.wav");
+
+// Stop recording
+s.stopRecording;
+```
+
+### 4. Monitor Audio
+```supercollider
+s.freqscope;  // Frequency analyzer
+s.scope;      // Oscilloscope
+```
 
 ## 🚨 Troubleshooting
 
-### Tidak Ada Suara?
-1. **Refresh halaman** dan klik di area halaman
-2. **Pastikan browser** mendukung Web Audio API
-3. **Check console** untuk error messages
-4. **Allow audio** permission jika diminta browser
+### Problem: Tidak Ada Suara
+**Solusi:**
+1. Pastikan server sudah boot: `s.boot;`
+2. Cek volume sistem
+3. Cek apakah pattern sudah di-play: `Pdef(\kick).play;`
 
-### Error "AudioContext not supported"?
-- Gunakan browser modern (Chrome, Firefox, Safari, Edge)
-- Pastikan tidak ada extension yang memblokir audio
+### Problem: Pattern Tidak Sinkron
+**Solusi:**
+1. Gunakan `quant:1` saat play: `Pdef(\kick).play(~clock, quant:1);`
+2. Pastikan semua pattern menggunakan `~clock` yang sama
 
-### Pattern tidak berhenti?
-- Gunakan tombol "Stop" atau ketik `hush()` di live coding area
+### Problem: Suara Terdistorsi
+**Solusi:**
+1. Kurangi `amp` (amplitude)
+2. Gunakan limiter: `Synth.tail(s, \limiter);`
+
+### Problem: Latency Tinggi
+**Solusi:**
+1. Kurangi buffer size: `s.options.blockSize = 64;`
+2. Restart server: `s.reboot;`
 
 ## 📚 Referensi & Learning Resources
 
-### Strudel
-- [Strudel Documentation](https://strudel.cc/learn/getting-started/)
-- [Strudel Examples](https://strudel.cc/learn/examples/)
-- [TidalCycles](https://tidalcycles.org/) - Inspirasi untuk Strudel
+### 📖 Panduan di Project Ini
+- **[SUPERCOLLIDER_GUIDE.md](SUPERCOLLIDER_GUIDE.md)** - Panduan lengkap dengan contoh kode dan tutorial step-by-step
 
-### SuperCollider
+### Dokumentasi Resmi
 - [SuperCollider Documentation](https://doc.sccode.org/)
+- [Pattern Guide](https://doc.sccode.org/Classes/Pattern.html)
+- [SynthDef Guide](https://doc.sccode.org/Classes/SynthDef.html)
+
+### Tutorial
 - [SuperCollider Tutorials](https://supercollider.github.io/tutorials/)
 - [SuperCollider Examples](https://github.com/supercollider/supercollider/tree/develop/examples)
-
-### Web Audio
-- [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
-
-## 🎯 Tips & Tricks
-
-### Untuk Pemula
-1. **Mulai Sederhana**: Mulai dengan pattern sederhana, lalu tambah kompleksitas
-2. **Gunakan Stack**: Kombinasikan multiple pattern dengan `stack()`
-3. **Eksperimen Durasi**: Coba berbagai durasi untuk rhythm yang menarik
-4. **Efek Bertahap**: Tambah efek satu per satu untuk memahami pengaruhnya
-5. **Pattern Repetitif**: Gunakan `*` untuk mengulang pattern
-
-### Advanced Tips
-1. **Layering**: Gabungkan melodi, bass, dan drum dengan `stack()` untuk full arrangement
-2. **Sidechain**: Di SuperCollider, gunakan sidechain untuk efek pumping (seperti di `dj_loop.scd`)
-3. **Automation**: Gunakan `Pseg` atau `LFNoise1` untuk parameter yang berubah seiring waktu
-4. **Recording**: Di SuperCollider, gunakan `s.record()` untuk capture audio langsung
-5. **BPM Sync**: Gunakan `setBPM()` di Strudel atau `TempoClock` di SuperCollider untuk tempo yang konsisten
 
 ## 🎓 Belajar Membuat Beat
 
 ### Langkah 1: Pahami Dasar-Dasar
-1. **Not dan Durasi**: Pelajari notasi musik dasar (c, d, e, f, g, a, b) dan durasi (1, 0.5, 0.25)
-2. **Drum Samples**: Kenali sample drum dasar (bd, sn, hh, cp, cy)
-3. **Pattern**: Pahami cara membuat pattern dengan spasi dan `~` untuk rest
+1. **SynthDef**: Pelajari cara membuat suara (kick, snare, hi-hat)
+2. **Pbind**: Pahami cara membuat pattern ritmik
+3. **TempoClock**: Pelajari kontrol tempo dan timing
 
 ### Langkah 2: Coba Contoh
-1. Mulai dengan contoh sederhana di web interface
+1. Mulai dengan `beat_basic.scd` untuk belajar dasar
 2. Modifikasi sedikit-sedikit dan dengar perubahannya
-3. Coba gabungkan beberapa pattern dengan `stack()`
+3. Coba file lain untuk genre berbeda
 
 ### Langkah 3: Buat Beat Sendiri
-1. Tentukan tempo dan genre (house, techno, hip-hop, dll)
+1. Tentukan tempo dan genre (hip-hop, trap, house, dll)
 2. Buat drum pattern dasar dulu
 3. Tambah bass line
 4. Tambah melodi atau chord
 5. Tambah efek untuk memperkaya suara
 
 ### Langkah 4: Advanced
-1. Coba file SuperCollider untuk kontrol lebih detail
-2. Eksperimen dengan efek dan automation
-3. Buat struktur arrangement (intro, verse, chorus, outro)
+1. **Baca Panduan**: Pelajari [SUPERCOLLIDER_GUIDE.md](SUPERCOLLIDER_GUIDE.md) untuk teknik advanced
+2. **Eksperimen**: Coba berbagai pattern dan efek
+3. **Buat Sendiri**: Modifikasi pattern dan buat beat unik Anda
+4. **Struktur Arrangement**: Pelajari `dj_loop.scd` untuk struktur lengkap (intro, build-up, drop, outro)
+5. **Recording**: Pelajari cara record output ke file WAV
 
 ## 🤝 Kontribusi
 
 Feel free untuk:
 - Menambah contoh pattern baru
-- Improve UI/UX
+- Improve dokumentasi
 - Tambah fitur baru
 - Report bugs
 - Share beat yang Anda buat!
@@ -345,4 +305,4 @@ MIT License - feel free untuk menggunakan project ini untuk apapun!
 
 **Happy Coding & Happy Music Making! 🎵✨**
 
-*Project ini dibuat untuk membantu Anda belajar membuat beat melalui coding. Mulai dari yang sederhana, eksperimen, dan nikmati prosesnya!*
+*Project ini dibuat untuk membantu Anda belajar membuat beat melalui coding dengan SuperCollider. Mulai dari yang sederhana, eksperimen, dan nikmati prosesnya!*
